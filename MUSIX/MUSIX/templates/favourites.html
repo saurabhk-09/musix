@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/player.css') }}">
+<script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+<title>MUSIX</title>
+<body>    
+        <table class="table table-hover table-dark table-bordered">
+            <thead>
+                <tr>
+                  <th scope="col-2"> Music Controls</th>
+                  <th scope="col-2">Song Name</th>
+                  <th scope="col-2">Artist Name</th>
+                  <th scope="col-2">Album Name</th>
+                  <th scope="col-2">Album Cover</th>
+                  
+                </tr>
+            </thead>
+
+        
+    {% for d in data %}
+    <tr>
+            <td> <audio id="{{ i }}" controls><source src="{{ url_for('static',filename='music/'+d.song_fname) }}" type="audio/mpeg"></audio></td>
+            <td><a href="{{ url_for('view_data',s_id=d.song_id) }}">{{ d.song_name }}</a> </td>
+            <td>{{ d.artist_name }} </td>
+            <td>{{ d.album_name }} </td> 
+            <td><img src="{{ url_for('static',filename='img/album/'+d.album_fname) }}" alt="No Album Image" style="width: 150px; height: 100px"> </td>
+       
+    </tr>
+    {% endfor %}
+    
+</table>
+<script src="{{ url_for('static',filename='js/player.js') }}" ></script>
+</body>
+</html>

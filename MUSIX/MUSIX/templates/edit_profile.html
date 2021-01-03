@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/edit_profile.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+    <body>
+        <div class="edit_profile">
+            <form method="post" enctype="multipart/form-data">
+                <CENTER><h1>Edit Profile</h1></CENTER>
+             <p class="form_label">Profile Image: <input type="file" name="profile_pic"> <br> </p>
+             <p class="form_label">Name: <input type="text" name="name" value="{{ data.name }}"> <br> </p>
+             <p class="form_label">Username: <input type="text" name="uname" value="{{ data.username }}"> <br> </p>
+             <p class="form_label">Phone: <input type="tel" name="phone" value="{{ data.phone }}" pattern="[0-9]{10}"> <br> </p>
+             <p class="form_label">Old Password: <input type="password" name="password" value=""> <br> </p>
+             <p class="form_label">New Password: <input type="password" name="new_password"> <br> </p>
+             <p class="form_label">Email: <input type="email" name="email" value="{{ data.email }}"> <br> </p>
+                <CENTER><input type="submit" value="Save Changes" class="save"></CENTER>    
+                {% if error!=None %}
+                    {{ error }}
+                {%endif%} 
+            </form>
+        </div>
+    </body>
+</html>

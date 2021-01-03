@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+    <title>Sign-Up Page</title>
+</head>
+<body>
+    <div class="signup">    
+        <form method='POST'>
+            <CENTER><h1><b>Sign-Up</b></h1>  </CENTER>
+            Name: <input type="text" name="name" required> <br>
+            Username: <input type="text" name="uname" required> <br>
+            Phone (10 digit phone number): <input type="tel" name="phone" required pattern="[0-9]{10}"> <br>
+            Password: <input type="password" name="password" required> <br>
+            Repeat Password: <input type="password" name="rpassword" required> <br>
+            Email: <input type="email" name="email" required> <br>
+            <input type="submit" value="Sign-Up" required> <br>
+            {% if error!=None %}
+                <div class="error">{{error}}</div>
+            {%endif%}
+        </form>
+        <form method="post"><input type="hidden" value="login" name="login"><input type="submit" value="Login"></form>
+    </div>
+</body>
+</html>

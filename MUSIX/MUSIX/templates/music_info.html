@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/music_info.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+<script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+  </head>
+  <body>
+    <div class="card text-white bg-dark mb-3" style="max-width: 22rem;">
+      <div class="card-header"><center><h2> {{ music_data.song_name }}</h2></center></div>
+      <div class="card-body">
+        <center><img src="{{ url_for('static',filename='img/artist/'+music_data.artist_fname) }}" alt="No image found" style="width: 200px;  height: 180px" class="rounded-circle" ></center>
+    <center>    <h5 class="card-title">Artist: {{ music_data.artist_name }} </h5></center>
+
+    <center>    <img src="{{ url_for('static',filename='img/album/'+music_data.album_fname) }}" alt="No image found" style="width: 200px;  height: 180px" class="rounded-circle"></center>
+        <center><p>Album: {{ music_data.album_name }}</p></center>
+        <!--<p> Favourites: </p>-->
+      </div>
+    </div>
+  </body>

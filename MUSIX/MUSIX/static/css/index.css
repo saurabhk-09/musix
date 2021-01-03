@@ -1,0 +1,26 @@
+body
+{
+  font-family: sans-serif;
+  background-image: url("../img/index.jpg");
+  
+  background-size: 100%;
+  color: white;
+}
+.title
+{
+    color: white;
+    text-decoration-line: underline;
+}
+.navbar navbar-expand-sm bg-dark navbar-dark
+{
+	opacity: 0.25;
+}
+.button-rshift
+{
+    margin-left: 900px;
+    margin-right: 60px;
+}
+.logout-button
+{
+  margin-left: 60px;
+}

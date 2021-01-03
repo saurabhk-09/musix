@@ -1,0 +1,45 @@
+body
+{
+  font-family: sans-serif;
+  color:#3c3939;
+  background-image: url("../img/profile.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+.edit_profile
+{
+  max-width: 400px;
+  border-radius: 20px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color:#fff;
+  margin-top: 20px;
+}
+.save
+{
+    margin: 20px;
+    padding: 10px;
+}
+.form_label
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+input[type=text],input[type=password],input[type=tel],input[type=email]{
+    width: 200px;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    background:white;
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted #fff;
+    color:black;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+  }

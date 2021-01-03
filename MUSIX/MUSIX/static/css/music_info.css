@@ -1,0 +1,19 @@
+.card
+{
+  margin: 0 auto;
+  float:none;
+  margin-bottom: 10px;
+  margin-top: 100px;
+  width: 700px;
+  font-style: italic;
+}
+body
+{
+  background:url('../img/profile.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.card-header
+{
+  height: 50px;
+}

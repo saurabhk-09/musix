@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" >
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+  </head>
+  <body>
+   <div class="login_page">
+    <CENTER><h3>Login Here</h3> </CENTER>
+    <form class="hi" method="POST">
+     <p>Username</p><input type="text" name="username" placeholder="Enter username">
+     <p>Password</p><input type="password" name="password" placeholder="Enter password">
+     <input type="submit" name="" value="LOGIN">
+      </form>
+    <form method="POST" class="hi"><input type="hidden" name="signup" value="SIGNUP"><input type="submit" value="Signup"></form>
+    <br> {% if data=='fail' %}ERROR WRONG CREDENTIALS{% endif %} 
+  </div>
+  </body>
+</html>
+

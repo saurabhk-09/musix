@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='fontawesome/css/all.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+  <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+  <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <a class="navbar-brand" href="#">MUSIX</a>  
+      
+        <form method="POST" id="play"><input type="hidden" name="player" value="player"></form>
+        <form method="POST" id="prof"><input type="hidden" name="profile" value="profile"></form>
+        <form method="POST" id="logout"><input type="hidden" name="logout" value="logout"></form>
+
+      
+        <ul class="navbar-nav navbar-right">
+                
+          <li class="nav-item">
+            <button type="submit" form="play" class="btn btn-success button-rshift">Music</button> <br>
+          </li>
+      
+          <li class="nav-item">
+            <button type="submit" form="prof" class="btn btn-success ">Profile</button> <br>
+          </li>
+          {% if is_auth!=0 %}
+          <li class="nav-item">
+            <button type="submit" form="logout" class="btn btn-success logout-button">Logout</button> <br>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <div class="container">
+        <h1 class="title">Dashboard</h1>
+        <table class="table table-hover table-dark table-bordered">
+              <thead>
+                  <tr>
+                    <th scope="col-2"><b><center>Number of Users</center></b></th>
+                    <th scope="col-2"><b><center>Number of Tracks</center></b></th>
+                    <th scope="col-2"><b><center>Number of Artist</center></b></th>
+                    <th scope="col-2"><b><center>Number of Albums</center></b></th>
+                  </tr>
+              </thead>
+      
+          <tr>
+          <td><center>{{ dash_data.user_count }}</center></td>
+          <td><center>{{ dash_data.song_count }}</center></td>
+          <td><center>{{ dash_data.artist_count }}</center></td>
+          <td><center>{{ dash_data.album_count }}</center></td> 
+          
+          </tr>
+      
+      </table>
+  </div>
+      
+<div class="container">
+  {% if news_data!='No Internet Error Encountered while Fetching News' %}
+      
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+              <th> <h2> <CENTER> Current News In The Music World </CENTER></h2></th>
+            </tr>  
+          </thead>
+          <tbody>
+            {% for data_item in news_data %}
+            <tr><td> <CENTER> <a href="{{ data_item['url'] }}" target="new"> {{ data_item['title'] }} </a></CENTER> <br> {{data_item['description']}} </td></tr>
+            {%endfor%}
+
+          </tbody>
+    </table> 
+    {% endif %} 
+</div>
+
+
+
+</body>
+
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <title>Index</title>
+</head>
+<body>
+   
+      <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  MUSIX
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class="active">Home</li>
+                  <li><form method="POST"><input type="hidden" name="player" value="player"> <input class="secret_link" type="submit" value="Play Music"></form></li>
+                  <li><form method="POST"><input type="hidden" name="profile" value="profile"> <input class="secret_link" type="submit" value="View Profile"></form></li>
+                </ul>
+              </div>
+            </nav>
+      <div class="container">
+          All Main Page Content Here
+      </div>
+   
+</body>
+</html>-->

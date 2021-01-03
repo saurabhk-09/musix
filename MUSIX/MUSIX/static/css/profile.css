@@ -1,0 +1,55 @@
+body
+{
+  padding-top: 100px;
+  font-family: sans-serif;
+  color:#3c3939;
+  background-image: url("../img/profile.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+.profile-card
+{
+
+  width:350px;
+  margin: auto;
+  background: rgba(46, 42, 42, 0.568);
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+  border-radius: 10px;
+  color: white;
+
+}
+.image-container
+{
+
+  position: relative;
+
+
+}
+.info
+{
+  color: #4b4fe2;
+  margin-right: 16px;
+
+}
+.main-container
+{
+
+  padding: 20px;
+
+
+
+}
+.title
+{
+padding-top: 20px;
+
+  left: 15px;
+  bottom: 0
+}
+
+.button
+{
+  padding-left: 220px;
+
+}
